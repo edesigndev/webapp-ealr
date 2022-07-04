@@ -153,6 +153,10 @@ export default {
             });
             this.$router.replace({ name: 'login' });
           } catch (error) {
+            this.$message({
+              message: 'Usuario ya existe',
+              type: 'warning',
+            });
             console.log(error);
           }
         } else {
