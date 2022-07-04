@@ -36,10 +36,11 @@
         <div class="table-container">
           <el-table :data="notas" style="width: 100%">
             <el-table-column type="index" width="50"> </el-table-column>
-            <el-table-column prop="name" label="Nombre" fit> </el-table-column>
-            <el-table-column prop="description" label="Descripcion" fit>
+            <el-table-column prop="name" label="Nombre" width="120">
             </el-table-column>
-            <el-table-column prop="date" label="Fecha" fit>
+            <el-table-column prop="description" label="Descripcion" width="120">
+            </el-table-column>
+            <el-table-column prop="date" label="Fecha" width="120">
               <template slot-scope="scope">
                 <span>{{ formatDate(scope.row.date) }}</span>
               </template>

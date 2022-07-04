@@ -6,13 +6,19 @@
         <div class="table-container">
           <el-table :data="users" style="width: 100%">
             <el-table-column type="index" width="50"> </el-table-column>
-            <el-table-column prop="names" label="Nombre" fit> </el-table-column>
-            <el-table-column prop="lastNames" label="Apellido" fit>
+            <el-table-column prop="names" label="Nombre" width="120">
             </el-table-column>
-            <el-table-column prop="cellphone" label="Celular" fit>
+            <el-table-column prop="lastNames" label="Apellido" width="120">
             </el-table-column>
-            <el-table-column prop="email" label="Email" fit> </el-table-column>
-            <el-table-column prop="dateOfBirth" label="F. Nacimiento" fit>
+            <el-table-column prop="cellphone" label="Celular" width="120">
+            </el-table-column>
+            <el-table-column prop="email" label="Email" width="200">
+            </el-table-column>
+            <el-table-column
+              prop="dateOfBirth"
+              label="F. Nacimiento"
+              width="150"
+            >
               <template slot-scope="scope">
                 <span>{{ formatDate(scope.row.dateOfBirth) }}</span>
               </template>
