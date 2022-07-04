@@ -1,0 +1,19 @@
+.user {
+  padding: 80px 20px 20px 20px;
+  align-items: center;
+  border-bottom: 1px solid $blanco;
+  .name {
+    color: $blanco;
+    margin-bottom: 1rem;
+    font-size: 12px;
+  }
+  .cash {
+    font-size: 11px;
+    color: $blanco;
+    align-items: center;
+  }
+  i.el-icon-coin {
+    color: $amarillo;
+    margin-right: 0.5rem;
+  }
+}

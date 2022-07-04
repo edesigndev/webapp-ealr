@@ -1,0 +1,17 @@
+.menu {
+  .subTitle {
+    padding: 10px 20px;
+    color: $blanco;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  .el-menu-item i {
+    color: $blanco;
+  }
+  .el-menu-item.is-active i {
+    color: $amarillo;
+  }
+  .el-menu {
+    height: 100vh;
+  }
+}

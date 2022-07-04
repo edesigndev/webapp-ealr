@@ -1,0 +1,25 @@
+//base
+@import 'base/reset';
+@import 'base/base';
+@import 'base/_typography';
+
+//Layout
+@import 'layout/dashboard';
+
+//abstracts
+@import 'abstracts/variables';
+
+//views
+@import 'views/home';
+@import 'views/login';
+@import 'views/notes';
+@import 'views/register';
+@import 'views/users';
+
+//components
+@import 'components/cardBenefits';
+@import 'components/cardPeriod';
+@import 'components/cardSummaryCurrentPeriod';
+@import 'components/header';
+@import 'components/sidebar';
+@import 'components/sidebarUser';

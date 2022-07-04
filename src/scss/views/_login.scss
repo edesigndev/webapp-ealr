@@ -1,0 +1,68 @@
+.login {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: $azul;
+  height: 100vh;
+  .left {
+    width: 40%;
+    margin: 50px 0 20px 20px;
+    color: $blanco;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    span:nth-child(1) {
+      font-size: 24px;
+    }
+    span:nth-child(2) {
+      font-size: 14px;
+    }
+  }
+  .right {
+    width: 60%;
+    background: $blanco;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .right-button {
+      margin-top: 40px;
+      p {
+        text-align: center;
+        font-size: 12px;
+        margin: 1rem;
+      }
+      .el-button {
+        width: 100%;
+      }
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: $azul;
+      }
+    }
+  }
+}
+@media (max-width: 640px) {
+  .login {
+    .left {
+      display: none !important;
+    }
+    .right {
+      padding-top: 50px;
+      width: 100%;
+      justify-content: start;
+    }
+    .right-button {
+      position: fixed;
+      bottom: 0;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      width: 85%;
+    }
+  }
+  .el-button {
+    width: 100% !important;
+  }
+}

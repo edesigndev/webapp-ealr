@@ -1,0 +1,28 @@
+.card-summary-current-period {
+  i.el-icon-warning-outline {
+    transform: rotate(180deg);
+    float: right;
+    color: $azul;
+  }
+  .title {
+    text-align: center;
+    margin: 1rem;
+  }
+  .content {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0 2rem;
+    }
+    li {
+      margin-bottom: 1rem;
+      i {
+        margin-right: 0.5rem;
+        color: $azul;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.el-aside {
+  background: $azul;
+}
+.el-header {
+  padding: 0 !important;
+}
+.el-main {
+  padding: 50px 20px;
+}
+@media screen and (max-width: 768px) {
+  .el-aside {
+    display: none;
+  }
+}

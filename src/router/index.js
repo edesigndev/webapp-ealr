@@ -1,29 +1,61 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-Vue.use(VueRouter)
+import Home from '@/views/Home.vue';
+import Register from '@/views/Register.vue';
+import Notes from '@/views/Notes.vue';
+import Users from '@/views/Users.vue';
+import Login from '@/views/Login.vue';
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+Vue.use(Router);
 
-const router = new VueRouter({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
-})
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+      meta: { requireAuth: true, layout: 'dashboard' },
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register,
+      meta: { layout: 'default' },
+    },
+    {
+      path: '/notas',
+      name: 'notas',
+      component: Notes,
+      meta: { requireAuth: true, layout: 'dashboard' },
+    },
+    {
+      path: '/usuarios',
+      name: 'usuarios',
+      component: Users,
+      meta: { requireAuth: true, layout: 'dashboard' },
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+      meta: { layout: 'default' },
+    },
+    { path: '*', redirect: '/', meta: { layout: 'Error' } },
+  ],
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  const publicPages = ['/login', '/register'];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = localStorage.getItem('token');
+  if (authRequired && !loggedIn) {
+    next({ name: 'login' });
+  } else {
+    next();
+  }
+});
+
+export default router;
